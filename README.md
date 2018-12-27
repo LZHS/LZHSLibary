@@ -39,7 +39,8 @@ dependencies {
             android:name="design_height_in_dp"
             android:value="1334"/>
      </application>
-</manifest>  ```
+</manifest>
+```
 
 
 ### DemoAPK
