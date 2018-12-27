@@ -1,2 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lzhs.library" />
+    package="com.lzhs.library" >
+    <application>
+        <provider
+            android:name=".InitProvider"
+            android:authorities="${applicationId}.autosize-init-provider"
+            android:exported="false"
+            android:multiprocess="true"/>
+    </application>
+</manifest>
