@@ -37,4 +37,5 @@ dependencies {
     testImplementation rootProject.ext.junit
     androidTestImplementation rootProject.ext.runner
     androidTestImplementation rootProject.ext.espresso_core
+    implementation rootProject.ext.fastJson
 }

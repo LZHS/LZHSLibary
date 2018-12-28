@@ -30,11 +30,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.lzhs.library.utils.LogUtil;
 import com.lzhs.library.wedgit.autosize.external.ExternalAdaptInfo;
 import com.lzhs.library.wedgit.autosize.external.ExternalAdaptManager;
 import com.lzhs.library.wedgit.autosize.internal.CancelAdapt;
 import com.lzhs.library.wedgit.autosize.internal.CustomAdapt;
-import com.lzhs.library.wedgit.autosize.utils.LogUtils;
 import com.lzhs.library.wedgit.autosize.utils.Preconditions;
 
 /**
@@ -193,7 +193,7 @@ public final class AutoSize {
 
         setDensity(activity, targetDensity, targetDensityDpi, targetScaledDensity, targetXdpi);
 
-        LogUtils.d(String.format(Locale.ENGLISH, "The %s has been adapted! \n%s Info: isBaseOnWidth = %s, %s = %f, %s = %f, targetDensity = %f, targetScaledDensity = %f, targetDensityDpi = %d, targetXdpi = %f"
+        LogUtil.d(String.format(Locale.ENGLISH, "The %s has been adapted! \n%s Info: isBaseOnWidth = %s, %s = %f, %s = %f, targetDensity = %f, targetScaledDensity = %f, targetDensityDpi = %d, targetXdpi = %f"
                 , activity.getClass().getName(), activity.getClass().getSimpleName(), isBaseOnWidth, isBaseOnWidth ? "designWidthInDp"
                         : "designHeightInDp", sizeInDp, isBaseOnWidth ? "designWidthInSubunits" : "designHeightInSubunits", subunitsDesignSize
                 , targetDensity, targetScaledDensity, targetDensityDpi, targetXdpi));

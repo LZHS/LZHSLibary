@@ -15,14 +15,13 @@
  */
 package com.lzhs.library;
 
-import android.app.Application;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
 import android.net.Uri;
 
-import com.lzhs.library.wedgit.autosize.AutoSizeConfig;
+import com.lzhs.library.utils.InitDefaultUtils;
 
 /**
  * ================================================
@@ -36,10 +35,9 @@ public class InitProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         boolean isDebug = (getContext().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
-        AutoSizeConfig.getInstance()
-                .setLog(isDebug)
-                .init((Application) getContext().getApplicationContext())
-                .setUseDeviceSize(false);
+        InitDefaultUtils.initLogUtil(getContext(), isDebug);
+        InitDefaultUtils.initAutoSize(getContext());
+        InitDefaultUtils.initSharedPreferencesp(getContext());
         return true;
     }
 

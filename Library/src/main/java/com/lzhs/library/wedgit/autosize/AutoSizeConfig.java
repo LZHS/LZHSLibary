@@ -26,9 +26,9 @@ import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 
+import com.lzhs.library.utils.LogUtil;
 import com.lzhs.library.wedgit.autosize.external.ExternalAdaptManager;
 import com.lzhs.library.wedgit.autosize.unit.UnitsManager;
-import com.lzhs.library.wedgit.autosize.utils.LogUtils;
 import com.lzhs.library.wedgit.autosize.utils.Preconditions;
 import com.lzhs.library.wedgit.autosize.utils.ScreenUtils;
 
@@ -189,7 +189,7 @@ public final class AutoSizeConfig {
         int[] screenSize = ScreenUtils.getScreenSize(application);
         mScreenWidth = screenSize[0];
         mScreenHeight = screenSize[1];
-        LogUtils.d("designWidthInDp = " + mDesignWidthInDp + ", designHeightInDp = " + mDesignHeightInDp + ", screenWidth = " + mScreenWidth + ", screenHeight = " + mScreenHeight);
+        LogUtil.d("designWidthInDp = " + mDesignWidthInDp + ", designHeightInDp = " + mDesignHeightInDp + ", screenWidth = " + mScreenWidth + ", screenHeight = " + mScreenHeight);
 
         mInitDensity = displayMetrics.density;
         mInitDensityDpi = displayMetrics.densityDpi;
@@ -202,7 +202,7 @@ public final class AutoSizeConfig {
                     if (newConfig.fontScale > 0) {
                         mInitScaledDensity =
                                 Resources.getSystem().getDisplayMetrics().scaledDensity;
-                        LogUtils.d("initScaledDensity = " + mInitScaledDensity + " on ConfigurationChanged");
+                        LogUtil.d("initScaledDensity = " + mInitScaledDensity + " on ConfigurationChanged");
                     }
                     isVertical = newConfig.orientation == Configuration.ORIENTATION_PORTRAIT;
                     int[] screenSize = ScreenUtils.getScreenSize(application);
@@ -216,7 +216,7 @@ public final class AutoSizeConfig {
 
             }
         });
-        LogUtils.d("initDensity = " + mInitDensity + ", initScaledDensity = " + mInitScaledDensity);
+        LogUtil.d("initDensity = " + mInitDensity + ", initScaledDensity = " + mInitScaledDensity);
         mActivityLifecycleCallbacks = new ActivityLifecycleCallbacksImpl(strategy == null ? new WrapperAutoAdaptStrategy(new DefaultAutoAdaptStrategy()) : strategy);
         application.registerActivityLifecycleCallbacks(mActivityLifecycleCallbacks);
         return this;
@@ -296,15 +296,7 @@ public final class AutoSizeConfig {
         return this;
     }
 
-    /**
-     * 是否打印 Log
-     *
-     * @param log {@code true} 为打印
-     */
-    public AutoSizeConfig setLog(boolean log) {
-        LogUtils.setDebug(log);
-        return this;
-    }
+
 
     /**
      * 是否让框架支持自定义 {@link Fragment} 的适配参数, 由于这个需求是比较少见的, 所以须要使用者手动开启

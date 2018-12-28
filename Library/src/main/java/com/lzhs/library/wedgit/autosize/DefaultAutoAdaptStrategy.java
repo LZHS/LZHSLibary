@@ -20,10 +20,10 @@ import android.app.Application;
 
 import java.util.Locale;
 
+import com.lzhs.library.utils.LogUtil;
 import com.lzhs.library.wedgit.autosize.external.ExternalAdaptInfo;
 import com.lzhs.library.wedgit.autosize.internal.CancelAdapt;
 import com.lzhs.library.wedgit.autosize.internal.CustomAdapt;
-import com.lzhs.library.wedgit.autosize.utils.LogUtils;
 
 /**
  * ================================================
@@ -43,14 +43,14 @@ public class DefaultAutoAdaptStrategy implements AutoAdaptStrategy {
         //检查是否开启了外部三方库的适配模式, 只要不主动调用 ExternalAdaptManager 的方法, 下面的代码就不会执行
         if (AutoSizeConfig.getInstance().getExternalAdaptManager().isRun()) {
             if (AutoSizeConfig.getInstance().getExternalAdaptManager().isCancelAdapt(target.getClass())) {
-                LogUtils.w(String.format(Locale.ENGLISH, "%s canceled the adaptation!", target.getClass().getName()));
+                LogUtil.d(String.format(Locale.ENGLISH, "%s canceled the adaptation!", target.getClass().getName()));
                 AutoSize.cancelAdapt(activity);
                 return;
             } else {
                 ExternalAdaptInfo info = AutoSizeConfig.getInstance().getExternalAdaptManager()
                         .getExternalAdaptInfoOfActivity(target.getClass());
                 if (info != null) {
-                    LogUtils.d(String.format(Locale.ENGLISH, "%s used %s for adaptation!", target.getClass().getName(), ExternalAdaptInfo.class.getName()));
+                    LogUtil.d(String.format(Locale.ENGLISH, "%s used %s for adaptation!", target.getClass().getName(), ExternalAdaptInfo.class.getName()));
                     AutoSize.autoConvertDensityOfExternalAdaptInfo(activity, info);
                     return;
                 }
@@ -59,17 +59,17 @@ public class DefaultAutoAdaptStrategy implements AutoAdaptStrategy {
 
         //如果 target 实现 CancelAdapt 接口表示放弃适配, 所有的适配效果都将失效
         if (target instanceof CancelAdapt) {
-            LogUtils.w(String.format(Locale.ENGLISH, "%s canceled the adaptation!", target.getClass().getName()));
+            LogUtil.w(String.format(Locale.ENGLISH, "%s canceled the adaptation!", target.getClass().getName()));
             AutoSize.cancelAdapt(activity);
             return;
         }
 
         //如果 target 实现 CustomAdapt 接口表示该 target 想自定义一些用于适配的参数, 从而改变最终的适配效果
         if (target instanceof CustomAdapt) {
-            LogUtils.d(String.format(Locale.ENGLISH, "%s implemented by %s!", target.getClass().getName(), CustomAdapt.class.getName()));
+            LogUtil.d(String.format(Locale.ENGLISH, "%s implemented by %s!", target.getClass().getName(), CustomAdapt.class.getName()));
             AutoSize.autoConvertDensityOfCustomAdapt(activity, (CustomAdapt) target);
         } else {
-            LogUtils.d(String.format(Locale.ENGLISH, "%s used the global configuration.", target.getClass().getName()));
+            LogUtil.d(String.format(Locale.ENGLISH, "%s used the global configuration.", target.getClass().getName()));
             AutoSize.autoConvertDensityOfGlobal(activity);
         }
     }
