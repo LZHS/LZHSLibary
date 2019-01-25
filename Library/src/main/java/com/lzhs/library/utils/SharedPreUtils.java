@@ -1,13 +1,12 @@
-package com.lzhs.library.wedgit.autosize.utils;
+package com.lzhs.library.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
-import com.lzhs.library.wedgit.autosize.utils.encryption.Encode3DES;
+import com.lzhs.library.utils.encryption.Encode3DES;
 
 import java.util.Collections;
 import java.util.Map;

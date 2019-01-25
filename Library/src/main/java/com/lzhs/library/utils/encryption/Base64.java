@@ -1,4 +1,4 @@
-package com.lzhs.library.wedgit.autosize.utils.encryption;
+package com.lzhs.library.utils.encryption;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.lzhs.library.wedgit.autosize.AutoSizeConfig;
-import com.lzhs.library.wedgit.autosize.utils.SharedPreUtils;
 
 /**
  * Description: 描述 <br/>

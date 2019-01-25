@@ -13,7 +13,11 @@ android {
         versionName rootProject.ext.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        javaCompileOptions{
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
     }
 
     buildTypes {
@@ -38,4 +42,5 @@ dependencies {
     androidTestImplementation rootProject.ext.runner
     androidTestImplementation rootProject.ext.espresso_core
     implementation rootProject.ext.fastJson
+    compileOnly rootProject.ext.lombok
 }
