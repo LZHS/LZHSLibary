@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="all" value="3" />
+        </attr>
+        <attr name="shadow_left" format="reference"/>
+        <attr name="shadow_right" format="reference"/>
+        <attr name="shadow_bottom" format="reference"/>
+    </declare-styleable>
+    <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+
+    <declare-styleable name="LZHSFlodTextView">
+        <!--最大行数-->
+        <attr name="showMaxLine" format="integer" />
+        <!--点击展开后是否显示收起全文提示-->
+        <attr name="showTipAfterExpand" format="boolean" />
+        <!--提示是否可以点击-->
+        <attr name="tipClickable" format="boolean" />
+        <!--提示文字颜色-->
+        <attr name="tipColor" format="color|reference" />
+        <!--提示文字位置 0-最后一行末尾，1-另起一行-->
+        <attr name="tipGravity">
+            <enum name="end" value="0" />
+            <enum name="nextLine" value="1" />
+        </attr>
+        <!--是否为父View设置了点击事件-->
+        <attr name="isSetParentClick" format="boolean" />
+        <!--折叠时的提示文字-->
+        <attr name="foldText" format="string|reference" />
+        <!--展开时的提示文字-->
+        <attr name="expandText" format="reference|string" />
+    </declare-styleable>
+</resources>

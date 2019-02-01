@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Library</string>
+
+    <string name="permission_rationale_message">你拒绝了该应用的申请授权，请同意授权。</string>
+    <string name="permission_denied_forever_message">该应用需要一些您拒绝的权限，否则将导致该应用部分功能将无法使用。</string>
 </resources>
