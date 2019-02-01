@@ -1,5 +1,5 @@
 #  LZHSLibary依赖库
-[![](https://img.shields.io/badge/LZHSLibary-lzhs_v1.0.6-brightgreen.svg)](https://jitpack.io/#LZHS/LZHSLibary)
+[![](https://img.shields.io/badge/LZHSLibary-lzhs_v1.0.0-brightgreen.svg)](https://jitpack.io/#LZHS/LZHSLibary)
 
 ### gradle
 Step 1.Add it in your root build.gradle at the end of repositories:
@@ -23,31 +23,23 @@ dependencies {
 
 
 ### 使用说明
+使用该库直接导入就行了，***重要的事情说三遍、重要的事情说三遍、重要的事情说三遍***  
+具体的初始化操作全部放在[InitProvider][InitProvider],具体原理参见[android自定初始化][android自定初始化]    
+
+> 利用 ContentProvider 来初始化,不用开发者编写任何代码。使用 ContentProvider 的原因有2个：  
+
+> * 他们创建初始化在优先于其他组件（主线程），在 Activity、Service、BroadcastReceivers 之前
+> * 在 manifest 合并的时候（编译期间) , 会把 Android 库里面的 ContentProvider 和 主 manifest 合并到一起。
 
 
 ### 提供供功能
-1. [AndroidAutoSize][AndroidAutoSize]
-该库引用了**AndroidAutoSize**该库是今日头条屏幕适配方案终极版，一个极低成本的 Android 屏幕适配方案，所以移除了张鸿洋大神的[AndroidAutoLayout][AndroidAutoLayout]
-使用注意：本人修改了该库的默认值，这原版中这两个属性必填，目前改为如果你不填写该属性，默认是苹果设计图的尺寸**750*1334**
-```
-<manifest>
-    <application>
-        <meta-data
-            android:name="design_width_in_dp"
-            android:value="750"/>
-        <meta-data
-            android:name="design_height_in_dp"
-            android:value="1334"/>
-     </application>
-</manifest>
-```
-
+* android 动态权限
 
 ### DemoAPK
 
 [DemoAPK][DemoAPK]   
 
- <img src="https://github.com/LZHS/LZHSLibary/blob/master/images/qrcode.png" width = 30% height = 40% />
+ <img src="https://github.com/LZHS/LZHSLibary/blob/develop/images/apk_qr_cord.png?raw=true" width = 40% height = 40% />
 
 
 ### 功能说明  
@@ -61,27 +53,25 @@ dependencies {
 
 **自定义控件**
 >  
-* [StatusView][StatusView]
-* [LZHSFoldText][LZHSFoldText]
-* [LZHSBanner][LZHSBanner]
+* [StatusView][StatusView] android 状态控件
+* [LZHSFoldText][LZHSFoldText] android 可折叠TextView
+* [LZHSBanner][LZHSBanner] android Banner
 
 
 **第三方库**
->
-* [AndroidAutoSize][AndroidAutoSize]
-* [SwipeBackLayout][SwipeBackLayout]  
-* [BaseAdapter][BaseAdapter]
+> 
+* [SwipeBackLayout][SwipeBackLayout]   
 
-
-[AndroidAutoLayout]:https://github.com/hongyangAndroid/AndroidAutoLayout
-
-[AndroidAutoSize]:https://github.com/JessYanCoding/AndroidAutoSize
+ 
+[android自定初始化]:https://juejin.im/entry/58c654ffda2f605dc5ab411d
+ 
+[InitProvider]:https://github.com/LZHS/LZHSLibary/blob/develop/Library/src/main/java/com/lzhs/library/InitProvider.java
 
 [BaseAdapter]:https://github.com/hongyangAndroid/baseAdapter
 
 [SwipeBackLayout]:https://github.com/ThirteenKilometers/SwipeBackLayout
 
-[DemoAPK]:https://github.com/LZHS/LZHSLibary/raw/master/testApk/LZHSDemo.apk
+[DemoAPK]:https://github.com/LZHS/LZHSLibary/raw/develop/apk/app-debug.apk
 
 [Home]:https://github.com/LZHS/LZHSLibary/wiki
 
@@ -97,5 +87,5 @@ dependencies {
 
 [LZHSBanner]:https://github.com/LZHS/LZHSBanner
 
-[StatusView]:https://github.com/LZHS/LZHSLibary/blob/master/library/src/main/java/lzhs/com/library/wedgit/views/StatusView.java
+[StatusView]:https://github.com/LZHS/StatusView
 
