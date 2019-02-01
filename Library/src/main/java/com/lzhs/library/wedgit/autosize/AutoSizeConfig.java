@@ -73,11 +73,11 @@ public final class AutoSizeConfig {
     /**
      * 设计图上的总宽度, 单位 dp 默认为IOS设计图高度 750*1334
      */
-    private int mDesignWidthInDp = 750;
+    private int mDesignWidthInDp = 375;
     /**
      * 设计图上的总高度, 单位 dp 默认为IOS设计图高度 750*1334
      */
-    private int mDesignHeightInDp = 1334;
+    private int mDesignHeightInDp = 667;
     /**
      * 设备的屏幕总宽度, 单位 px
      */
