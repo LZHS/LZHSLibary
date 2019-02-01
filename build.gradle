@@ -71,4 +71,8 @@ project.ext {
     //lombok
     lombok = "org.projectlombok:lombok:1.18.4"
 
+    //arouter
+    arouter_api = "com.alibaba:arouter-api:1.4.1"
+    arouter_compiler = 'com.alibaba:arouter-compiler:1.2.2'
+
 }

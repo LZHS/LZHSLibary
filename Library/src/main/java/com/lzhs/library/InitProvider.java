@@ -35,6 +35,7 @@ public class InitProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         boolean isDebug = (getContext().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        Utils.init(getContext());
         InitDefaultUtils.initLogUtil(getContext(), isDebug);
         InitDefaultUtils.initAutoSize(getContext());
         InitDefaultUtils.initSharedPreferencesp(getContext());
