@@ -31,17 +31,6 @@ dependencies {
 > * 他们创建初始化在优先于其他组件（主线程），在 Activity、Service、BroadcastReceivers 之前
 > * 在 manifest 合并的时候（编译期间) , 会把 Android 库里面的 ContentProvider 和 主 manifest 合并到一起。
 
-
-### 提供供功能
-* android 动态权限
-
-### DemoAPK
-
-[DemoAPK][DemoAPK]   
-
- <img src="https://github.com/LZHS/LZHSLibary/blob/develop/images/apk_qr_cord.png?raw=true" width = 40% height = 40% />
-
-
 ### 功能说明  
 **工具类**
 > 
@@ -62,7 +51,14 @@ dependencies {
 > 
 * [SwipeBackLayout][SwipeBackLayout]   
 
- 
+
+### DemoAPK
+
+[DemoAPK][DemoAPK]
+
+ <img src="https://github.com/LZHS/LZHSLibary/blob/develop/images/apk_qr_cord.png?raw=true" width = 40% height = 40% />
+
+
 [android自定初始化]:https://juejin.im/entry/58c654ffda2f605dc5ab411d
  
 [InitProvider]:https://github.com/LZHS/LZHSLibary/blob/develop/Library/src/main/java/com/lzhs/library/InitProvider.java
