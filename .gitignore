@@ -13,3 +13,5 @@
 .externalNativeBuild
 /CommonLibrary
 /PressmissLibrary
+/FlodTextLibrary
+/BannerLibrary

@@ -14,11 +14,34 @@
         <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
     </style>
 
-
+    <!--侧滑框架-->
     <style name="SwipeBackLayout">
         <item name="edge_size">50dip</item>
         <item name="shadow_left">@mipmap/shadow_left</item>
         <item name="shadow_right">@mipmap/shadow_right</item>
         <item name="shadow_bottom">@mipmap/shadow_bottom</item>
+    </style>
+
+
+    <style name="LZHSStatusView" />
+
+    <style name="LZHSStatusView.Style" parent="LZHSStatusView">
+        <item name="StatusEmptyResId">@layout/status_layout_empty</item>
+        <item name="StatusLoadingResId">@layout/status_layout_loading</item>
+        <item name="StatusErrorResId">@layout/status_layout_error</item>
+
+        <item name="StatusTextColor">#999999</item>
+        <item name="StatusTextSize">13sp</item>
+
+        <item name="StatusButtonTextColor">#999999</item>
+        <item name="StatusButtonTextSize">13sp</item>
+        <item name="StatusButtonBackground">@drawable/status_loading_layout_button</item>
+
+        <item name="StatusEmptyImage">@mipmap/empty</item>
+        <item name="StatusEmptyText">暂无数据</item>
+        <item name="StatusErrorImage">@mipmap/error</item>
+        <item name="StatusErrorText">无网络连接，请检查您的网络...</item>
+        <item name="StatusRetryText">加载失败，点击重试~~</item>
+        <item name="StatusLoadingText">正在加载...</item>
     </style>
 </resources>

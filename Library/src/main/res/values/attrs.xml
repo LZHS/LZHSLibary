@@ -1,22 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--多功能状态控件-->
+    <attr name="StatusViewAttr" format="reference" />
+    <declare-styleable name="LZHSStatusView">
+        <!-- 空布局资源id -->
+        <attr name="StatusEmptyResId" format="reference" />
+        <!-- 加载中布局资源id -->
+        <attr name="StatusLoadingResId" format="reference" />
+        <!-- 错误布局资源id -->
+        <attr name="StatusErrorResId" format="reference" />
+        <!-- 空布局展示图片 -->
+        <attr name="StatusEmptyImage" format="reference" />
+        <!-- 空布局展示文本 -->
+        <attr name="StatusEmptyText" format="string" />
+        <!-- 错误布局图片 -->
+        <attr name="StatusErrorImage" format="reference" />
+        <!-- 错误布局文本 -->
+        <attr name="StatusErrorText" format="string" />
+        <!-- 错误布局重试按钮文本 -->
+        <attr name="StatusRetryText" format="string" />
+        <!-- 加载布局文本 -->
+        <attr name="StatusLoadingText" format="string" />
+        <!-- 文本颜色 -->
+        <attr name="StatusTextColor" format="color" />
+        <!-- 文本尺寸 -->
+        <attr name="StatusTextSize" format="dimension" />
+        <!-- 按钮文本颜色 -->
+        <attr name="StatusButtonTextColor" format="color" />
+        <!-- 按钮文本尺寸 -->
+        <attr name="StatusButtonTextSize" format="dimension" />
+        <!-- 按钮背景 -->
+        <attr name="StatusButtonBackground" format="reference" />
+    </declare-styleable>
+    <!--侧滑返回框架-->
     <declare-styleable name="SwipeBackLayout">
-        <attr name="edge_size" format="dimension"/>
+        <attr name="edge_size" format="dimension" />
         <attr name="edge_flag">
             <enum name="left" value="0" />
             <enum name="right" value="1" />
             <enum name="bottom" value="2" />
             <enum name="all" value="3" />
         </attr>
-        <attr name="shadow_left" format="reference"/>
-        <attr name="shadow_right" format="reference"/>
-        <attr name="shadow_bottom" format="reference"/>
+        <attr name="shadow_left" format="reference" />
+        <attr name="shadow_right" format="reference" />
+        <attr name="shadow_bottom" format="reference" />
     </declare-styleable>
-    <attr name="SwipeBackLayoutStyle" format="reference"/>
+    <attr name="SwipeBackLayoutStyle" format="reference" />
 
-
-    <declare-styleable name="LZHSFlodTextView">
+    <!--可折叠的TextView-->
+    <declare-styleable name="LZHSFlodText">
         <!--最大行数-->
         <attr name="showMaxLine" format="integer" />
         <!--点击展开后是否显示收起全文提示-->
@@ -37,4 +69,29 @@
         <!--展开时的提示文字-->
         <attr name="expandText" format="reference|string" />
     </declare-styleable>
+
+
+    <declare-styleable name="LZHSBannerView">
+        <!--是否开启banner 折叠效果-->
+        <attr name="isFoldEffect" format="boolean" />
+        <!--是否开启轮播图片-->
+        <attr name="canLoop" format="boolean" />
+        <!--indicator 距离左边的距离-->
+        <attr name="indicatorPaddingLeft" format="dimension" />
+        <!--indicator 距离右边的距离-->
+        <attr name="indicatorPaddingRight" format="dimension" />
+        <!--indicator 距离上边的距离-->
+        <attr name="indicatorPaddingTop" format="dimension" />
+        <!--indicator 距离下边的距离-->
+        <attr name="indicatorPaddingBottom" format="dimension" />
+        <!--indicator 对齐方式-->
+        <attr name="indicatorAlign">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <!--中间Page是否覆盖两边，默认覆盖-->
+        <attr name="middle_page_cover" format="boolean" />
+    </declare-styleable>
+
 </resources>

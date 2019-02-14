@@ -35,8 +35,8 @@ import com.lzhs.library.R;
  * Email: 1050629507@qq.com <br/>
  * Time: 2018/9/14$ 下午2:31$ <br/>
  */
-public class LZHSFlodTextView extends AppCompatTextView implements View.OnClickListener {
-    private static final String TAG = "LZHSFlodTextView";
+public class LZHSFlodText extends AppCompatTextView implements View.OnClickListener {
+    private static final String TAG = "LZHSFlodText";
     private static final String ELLIPSIZE_END = "...";
     private static final int MAX_LINE = 4;
     private static final String EXPAND_TIP_TEXT = "收起全文";
@@ -99,12 +99,12 @@ public class LZHSFlodTextView extends AppCompatTextView implements View.OnClickL
 
     private OnClickListener listener;
 
-    public LZHSFlodTextView(Context context) {
+    public LZHSFlodText(Context context) {
         this(context, null);
     }
 
 
-    public LZHSFlodTextView(Context context, AttributeSet attrs) {
+    public LZHSFlodText(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
@@ -113,20 +113,20 @@ public class LZHSFlodTextView extends AppCompatTextView implements View.OnClickL
         super.setTextColor(color);
     }
 
-    public LZHSFlodTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LZHSFlodText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mShowMaxLine = MAX_LINE;
         mSpan = new ExpandSpan();
         if (attrs != null) {
-            TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.LZHSFlodTextView);
-            mShowMaxLine = arr.getInt(R.styleable.LZHSFlodTextView_showMaxLine, MAX_LINE);
-            mTipGravity = arr.getInt(R.styleable.LZHSFlodTextView_tipGravity, END);
-            mTipColor = arr.getColor(R.styleable.LZHSFlodTextView_tipColor, TIP_COLOR);
-            mTipClickable = arr.getBoolean(R.styleable.LZHSFlodTextView_tipClickable, false);
-            mFoldText = arr.getString(R.styleable.LZHSFlodTextView_foldText);
-            mExpandText = arr.getString(R.styleable.LZHSFlodTextView_expandText);
-            isShowTipAfterExpand = arr.getBoolean(R.styleable.LZHSFlodTextView_showTipAfterExpand, false);
-            isParentClick = arr.getBoolean(R.styleable.LZHSFlodTextView_isSetParentClick, false);
+            TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.LZHSFlodText);
+            mShowMaxLine = arr.getInt(R.styleable.LZHSFlodText_showMaxLine, MAX_LINE);
+            mTipGravity = arr.getInt(R.styleable.LZHSFlodText_tipGravity, END);
+            mTipColor = arr.getColor(R.styleable.LZHSFlodText_tipColor, TIP_COLOR);
+            mTipClickable = arr.getBoolean(R.styleable.LZHSFlodText_tipClickable, false);
+            mFoldText = arr.getString(R.styleable.LZHSFlodText_foldText);
+            mExpandText = arr.getString(R.styleable.LZHSFlodText_expandText);
+            isShowTipAfterExpand = arr.getBoolean(R.styleable.LZHSFlodText_showTipAfterExpand, false);
+            isParentClick = arr.getBoolean(R.styleable.LZHSFlodText_isSetParentClick, false);
             arr.recycle();
         }
         if (TextUtils.isEmpty(mExpandText)) {
