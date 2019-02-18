@@ -1,5 +1,5 @@
 #  LZHSLibary依赖库
-[![](https://img.shields.io/badge/LZHSLibary-lzhs_v1.0.1-brightgreen.svg)](https://jitpack.io/#LZHS/LZHSLibary)
+[![](https://img.shields.io/badge/LZHSLibary-lzhs_v1.1.1-brightgreen.svg)](https://jitpack.io/#LZHS/LZHSLibary)
 
 ### gradle
 Step 1.Add it in your root build.gradle at the end of repositories:
@@ -17,7 +17,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-    implementation 'com.github.LZHS:LZHSLibary:lzhs_v1.0.1'
+    implementation 'com.github.LZHS:LZHSLibary:lzhs_v1.1.1'
 }
 ```  
 
