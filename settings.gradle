@@ -1,1 +1,1 @@
-include ':app', ':Library', ':CommonLibrary', ':PressmissLibrary', ':FlodTextLibrary', ':BannerLibrary'
+include ':app', ':Library', ':CommonLibrary', ':PressmissLibrary', ':FlodTextLibrary', ':BannerLibrary', ':StatusViewLibrary'
