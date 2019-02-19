@@ -41,4 +41,7 @@ dependencies {
     androidTestImplementation rootProject.ext.espresso_core
     implementation rootProject.ext.fastJson
     compileOnly rootProject.ext.lombok
+
+    implementation  rootProject.ext.rxjava
+    implementation  rootProject.ext.rxandroid
 }
